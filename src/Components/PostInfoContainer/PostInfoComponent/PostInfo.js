@@ -5,12 +5,13 @@ const PostInfo = (props) => {
     return (
         <div>
             <div>
-                <div>
-                    <p>{post.title}</p>
-                    <p> id: {post.id}  user id: {post.userId}</p>
-                    <p>{post.body}</p>
-                    <button>back for list</button>
-                </div>
+
+                {/*<div>*/}
+                {/*    <p>{post.title}</p>*/}
+                {/*    <p> id: {post.id}  user id: {post.userId}</p>*/}
+                {/*    <p>{post.body}</p>*/}
+                {/*    <button>back for list</button>*/}
+                {/*</div>*/}
             </div>
         </div>
     );

@@ -6,7 +6,7 @@ import PostInfoContainer from "./Components/PostInfoContainer/PostInfoContainer"
 function App() {
   return (
     <>
-      {/*<PostInfoContainer/>*/}
+      <PostInfoContainer/>
       <PostContainer/>
     </>
   );
