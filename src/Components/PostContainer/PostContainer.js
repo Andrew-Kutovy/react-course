@@ -14,9 +14,11 @@ export const PostContainer = () => {
 
 let show = (val) => {
         postId = val
-    //     alert(`id = ${postId}`)
-    // console.log(postId)
+        alert(`id = ${postId}`)
+    console.log(postId)
 }
+
+
 
     return <>
         <div>
