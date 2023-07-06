@@ -1,0 +1,9 @@
+.post{
+    box-sizing: border-box;
+    border: 1px solid gray;
+    width: 40vw;
+    height: 5vw;
+    font-size: 15px;
+    margin: 0 5px;
+    padding: 0 5px;
+}
