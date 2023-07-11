@@ -1,11 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
-import Users from "./Components/Users/Users";
 
 function App() {
   return (
     <div className="App">
-      <Users/>
+      <p>Hello world!</p>
     </div>
   );
 }
