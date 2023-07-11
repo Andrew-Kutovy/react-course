@@ -1,3 +1,7 @@
 .container{
     border: 1px solid grey;
+    display: flex;
+    align-items: start;
+    width: 40vw;
+    margin: 10px;
 }

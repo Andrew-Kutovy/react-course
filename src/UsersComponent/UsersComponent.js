@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import UserComponent from "./UserComponent/UserComponent";
-import styles from './UsersComponent.module.css'
 
 const UsersComponent = () => {
     const [users, setUsers] = useState([])
+
 
     useEffect(()=>{
         fetch('https://jsonplaceholder.typicode.com/users')
@@ -12,12 +12,7 @@ const UsersComponent = () => {
     }, [])
 
 
-    return (
-        <div className={styles.container}>
-            {users.map((user, id) => <UserComponent key={id} user={user} />)}
-        </div>
-
-    );
+    return (<>{users.map((user) => (<UserComponent key={user.id} user={user} />))}</>)
 };
 
 export default UsersComponent;
