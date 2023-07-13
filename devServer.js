@@ -11,7 +11,7 @@ app.use(morgan('dev'))
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 
-app.post('/api/create', (request, response) => {
+app.post('/api/create/', (request, response) => {
     console.log(request);
     response.json(request.body);
 });

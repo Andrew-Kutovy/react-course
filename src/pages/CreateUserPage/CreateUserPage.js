@@ -4,7 +4,7 @@ import styles from './CreateUserPage.module.css';
 const CreateUserPage = () => {
      let [formValues, setFormValues] = useState({
          id: '', name: '', username: '', email: '', address: '', street: '', suite: '', city: '', zip: '',
-         geo: '', lat: '', lng: '', phone: '', website: '', company: '', nameComp : '', catchPhrase: '', bs: ''
+         geo: '', lat: '', lng: '', phone: '', website: ''
      })
     const handleFormChange = (e, key) => {
         e.preventDefault()
@@ -22,15 +22,13 @@ const CreateUserPage = () => {
 
      const handleCreate = async () => {
          try {
-            const data = await fetch('https://localhost:8000/api/create', {
+            const data = await fetch('http://jsonplaceholder.typicode.com/users', {
                 method: 'POST',
                 body: JSON.stringify(formValues)
             })
             const response = await data.json()
              console.log(response)
-         } catch (e) {
-
-         }
+         } catch (e) {}
      }
 
     return (
@@ -76,18 +74,6 @@ const CreateUserPage = () => {
                 </label>
                 <label > website:<br/>
                     <input type="text" value={formValues.website} onChange={(e)=>handleFormChange(e, 'website')}/>
-                </label>
-                <label > company:<br/>
-                    <input type="text" value={formValues.company} onChange={(e)=>handleFormChange(e, 'company')}/>
-                </label>
-                <label > name:<br/>
-                    <input type="text" value={formValues.nameComp} onChange={(e)=>handleFormChange(e, 'nameComp')}/>
-                </label>
-                <label > catchPhrase:<br/>
-                    <input type="text"/>
-                </label>
-                <label > bs:<br/>
-                    <input type="text" value={formValues.bs} onChange={(e)=>handleFormChange(e, 'bs')}/>
                 </label>
                 <button type="submit">create user</button>
             </form>
