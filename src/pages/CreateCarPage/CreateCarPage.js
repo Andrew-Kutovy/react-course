@@ -1,7 +1,7 @@
 import React, {useRef} from 'react';
 import styles from "../CreateUserPage/CreateUserPage.module.css";
 
-const CreateCarPage = () => {
+const CreateCarPage = () => { //
     const handleSubmit = (event) => {
         event.preventDefault();
         handleCreate();
