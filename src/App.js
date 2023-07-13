@@ -5,9 +5,9 @@ import CreateCommentPage from "./pages/CreateCommentPage/CreateCommentPage";
 const App = () => {
 
     return (
-        <div>
-            {/*<CreateUserPage />*/}
-            <CreateCommentPage />
+        <div >
+            <div><CreateUserPage /></div>
+            <div><CreateCommentPage /></div>
         </div>
     );
 };
