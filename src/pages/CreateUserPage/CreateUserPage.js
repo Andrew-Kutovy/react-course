@@ -12,16 +12,25 @@ const CreateUserPage = () => {
             return {
                 ...prevState,
                 [key] : e.target.value
-        }
-
-
-
-
+            }
         })
     }
      const handleSubmit = (event) => {
          event.preventDefault();
-         console.log(formValues)
+         handleCreate();
+     }
+
+     const handleCreate = async () => {
+         try {
+            const data = await fetch('https://localhost:8000/api/create', {
+                method: 'POST',
+                body: JSON.stringify(formValues)
+            })
+            const response = await data.json()
+             console.log(response)
+         } catch (e) {
+
+         }
      }
 
     return (
