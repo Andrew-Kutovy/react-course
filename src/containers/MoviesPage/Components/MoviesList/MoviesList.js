@@ -1,13 +1,11 @@
 import React from 'react';
 
-
-const App = () => {
-
+const MoviesList = () => {
     return (
         <div>
-            <h1>App</h1>
+            
         </div>
     );
 };
 
-export default App;
+export default MoviesList;
