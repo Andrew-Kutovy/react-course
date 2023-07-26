@@ -5,15 +5,12 @@ const List = () => {
     const [list, setList] = useState([])
 
     useEffect(() => {
-        listService.getAll().then(({data})=>{
-            console.log(data)
-            return setList(data)
-        })
+        listService.getAll().then(({data})=>setList(data))
     }, []);
-
+    console.log(list)
     return (
         <div>
-            {console.log(list)}
+            hghg
         </div>
     );
 };
