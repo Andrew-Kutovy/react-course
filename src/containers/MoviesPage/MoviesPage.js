@@ -12,7 +12,7 @@ const MoviesPage = () => {
 
     return (
         <div>
-            {films.map((film) => <MoviesList key={film.id} film={film} />)}
+            {Array.isArray(films) ? films.map((film) => <MoviesList key={film.id} film={film} />) : <p>No films available</p>}
         </div>
     );
 };
