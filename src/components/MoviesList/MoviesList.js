@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import listService from '../../services/listService';
 import MoviesListCard from "../MoviesListCard/MoviesListCard";
+import style from './MoviesList.module.css';
 
 const MoviesList = () => {
     const [list, setList] = useState([]);
@@ -28,7 +29,7 @@ const MoviesList = () => {
     }
 
     return (
-        <div>
+        <div className={style.list}>
             {list.map((item) => <MoviesListCard key={item.id} film={item}/>)}
         </div>
     );

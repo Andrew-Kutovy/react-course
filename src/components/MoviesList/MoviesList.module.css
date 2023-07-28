@@ -1,0 +1,7 @@
+.list{
+    display: flex;
+    flex-wrap: wrap; /* Добавляем flex-wrap для переноса элементов на новую строку */
+    justify-content: space-between; /* Добавляем justify-content для равномерного распределения элементов по ширине */
+    padding: 5px;
+    margin: 5px;
+}

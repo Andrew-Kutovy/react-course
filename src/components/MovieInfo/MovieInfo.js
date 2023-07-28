@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import DetailService from '../../services/detailService';
 
-const Details = () => { // Заменили "DetailsPage" на "Details"
+const MovieInfo = () => { // Заменили "DetailsPage" на "MovieInfo"
     const { movieId } = useParams();
     const [movieDetails, setMovieDetails] = useState(null);
 
@@ -30,4 +30,4 @@ const Details = () => { // Заменили "DetailsPage" на "Details"
     );
 };
 
-export default Details;
+export default MovieInfo;

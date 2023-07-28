@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {apiService} from "../../../services";
 import {urls} from "../../../constants";
 
@@ -29,7 +30,8 @@ const GenreMoviesPage = () => {
             <h1>Genre Movies Page</h1>
             {movies.map((movie) => (
                 <div key={movie.id}>
-                    <h3>{movie.title}</h3>
+                    {/* Создаем ссылку с путем `/details/:movieId`, где :movieId - это идентификатор фильма */}
+                    <Link to={`/details/${movie.id}`}>{movie.title}</Link>
                     <p>{movie.overview}</p>
                 </div>
             ))}
