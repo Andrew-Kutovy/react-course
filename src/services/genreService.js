@@ -6,4 +6,5 @@ const GenreService =  {
     getAll: ()=>apiService.get(urls.genres)
 };
 
+
 export default GenreService;

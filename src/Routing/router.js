@@ -4,6 +4,7 @@ import React from "react";
 import MainLayout from "../layouts/MainLayout/MainLayout";
 import {MoviesPage, GenresPage, DetailsPage, NotFoundPage } from "../pages";
 import UserPage from "../pages/UserPage/UserPage";
+import GenreMoviesPage from "../components/GenreBadge/GenreMoviesPage/GenreMoviesPage";
 
 let router= createBrowserRouter([
     {
@@ -24,6 +25,10 @@ let router= createBrowserRouter([
             {
                 path: 'user',
                 element: <UserPage/>
+            },
+            {
+                path: 'genres/:genreId',
+                element: <GenreMoviesPage />
             }
         ]
     },

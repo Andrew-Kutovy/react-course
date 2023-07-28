@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom'; // Импортируем компонент Link
 import GenreService from '../../services/genreService';
 
 const GenreBadge = () => {
@@ -14,7 +15,8 @@ const GenreBadge = () => {
         <div>
             {genres.map((genre) => (
                 <div key={genre.id}>
-                    <p>{genre.name}</p>
+                    {/* Создаем ссылку с путем `/genres/:genreId`, где :genreId - это идентификатор жанра */}
+                    <Link to={`/genres/${genre.id}`}>{genre.name}</Link>
                 </div>
             ))}
         </div>
