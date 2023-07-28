@@ -1,5 +1,5 @@
 const baseURL = `https://api.themoviedb.org/3`;
-const list = "/discover/movie"
+const list = "/discover/movie?page=1"
 const genres = "/genre/movie/list"
 const movieDetail = "/movie/"
 
