@@ -20,6 +20,8 @@ const MoviesList = () => {
             });
     }, []);
 
+    console.log(list)
+
     if (loading) {
         return <div>Loading...</div>;
     }
