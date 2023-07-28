@@ -1,15 +1,21 @@
 import React from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
+import css from './Header.module.css';
 
-import css from './Header.module.css'
-import {NavLink} from "react-router-dom";
-
-//
 const Header = () => {
+    const location = useLocation();
+
+    // Функция для проверки, является ли текущий путь страницей "Детали"
+    const isDetailsPage = () => {
+        return location.pathname.includes('/details');
+    };
+
     return (
         <div className={css.Header}>
-            <NavLink to={'list'}>List</NavLink>
-            <NavLink to={'genres'}>Genres</NavLink>
-            <NavLink to={'details'}>Details</NavLink>
+            <NavLink to="/">Main</NavLink>
+            <NavLink to="/genres">Genres</NavLink>
+            <NavLink to="/user">User Info</NavLink>
+            {isDetailsPage() && <NavLink to="/details">Details</NavLink>}
         </div>
     );
 };

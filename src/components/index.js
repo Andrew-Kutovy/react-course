@@ -1,4 +1,4 @@
 export * from "./Header/Header";
-export * from "./List/List";
-export * from "./Detail/Detail";
+export * from "./MoviesList/MoviesList";
+export * from "./Details/Details";
 export * from "./Genres/Genres";

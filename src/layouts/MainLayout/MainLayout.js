@@ -1,15 +1,12 @@
 import React from 'react';
+
 import {Outlet} from "react-router-dom";
-import Header from "../../components/Header/Header";
-import MoviesPage from "../../containers/MoviesPage/MoviesPage";
-
-
+import Header from "../../components/Header/Header"
 
 const MainLayout = () => {
     return (
         <div>
             <Header/>
-            <MoviesPage/>
             <Outlet/>
         </div>
     );

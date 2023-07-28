@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Genres = () => {
+const UserPage = () => {
     return (
         <div>
-            
+            User's info:
         </div>
     );
 };
 
-export default Genres;
+export default UserPage;
