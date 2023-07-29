@@ -1,8 +1,8 @@
 import {apiService} from "./apiService";
 import {urls} from "../constants";
 
-const ListService =  {
-    getAll: ()=>apiService.get(urls.list)
+const listService = {
+    getAll: (page) => apiService.get(urls.list+`?page=${page}`),
 };
 
-export default ListService;
+export default listService;

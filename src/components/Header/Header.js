@@ -5,10 +5,7 @@ import css from './Header.module.css';
 const Header = () => {
     const location = useLocation();
 
-    // Функция для проверки, является ли текущий путь страницей "Детали"
-    const isDetailsPage = () => {
-        return location.pathname.includes('/details');
-    };
+    const isDetailsPage = () => location.pathname.includes('/details');
 
     return (
         <div className={css.Header}>
