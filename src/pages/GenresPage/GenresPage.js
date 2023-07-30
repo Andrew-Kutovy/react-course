@@ -10,4 +10,4 @@ const GenresPage = () => {
     );
 };
 
-export {GenresPage};
+export { GenresPage };

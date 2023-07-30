@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom'; // Импортируем компонент Link
+import { Link, useLocation } from 'react-router-dom'; // Импортируем useLocation из react-router-dom
 import GenreService from '../../services/genreService';
 
 const GenreBadge = () => {
     const [genres, setGenres] = useState([]);
+    const location = useLocation(); // Используем хук useLocation для получения объекта location
 
     useEffect(() => {
         GenreService.getAll().then(({ data }) => {
@@ -15,8 +16,9 @@ const GenreBadge = () => {
         <div>
             {genres.map((genre) => (
                 <div key={genre.id}>
-                    {/* Создаем ссылку с путем `/genres/:genreId`, где :genreId - это идентификатор жанра */}
-                    <Link to={`/genres/${genre.id}`}>{genre.name}</Link>
+                    <Link to={{ pathname: `/genres/${genre.id}`, state: { genreName: genre.name } }}>
+                        {genre.name}
+                    </Link>
                 </div>
             ))}
         </div>

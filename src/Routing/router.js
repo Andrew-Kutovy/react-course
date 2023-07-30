@@ -15,7 +15,7 @@ let router= createBrowserRouter([
                 element: <MoviesPage/>
             },
             {
-                path: 'genres',
+                path: '/genres',
                 element: <GenresPage/>
             },
             {

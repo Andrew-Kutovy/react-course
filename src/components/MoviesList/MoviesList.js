@@ -10,10 +10,9 @@ const MoviesList = () => {
     const [currentPage, setCurrentPage] = useState(1);
 
     useEffect(() => {
-        // Функция для получения списка фильмов с заданной страницей
         const fetchMovies = async (page) => {
             try {
-                const { data } = await listService.getAll(page); // Вызываем ListService.getAll с параметром page
+                const { data } = await listService.getAll(page);
                 setList((prevList) => [...prevList, ...data.results]);
                 setLoading(false);
             } catch (error) {
@@ -22,7 +21,7 @@ const MoviesList = () => {
             }
         };
 
-        fetchMovies(currentPage); // Получаем данные для текущей страницы
+        fetchMovies(currentPage);
     }, [currentPage]);
 
     const handleLoadMore = () => {
@@ -42,7 +41,11 @@ const MoviesList = () => {
             {list.map((item) => (
                 <MoviesListCard key={item.id} film={item} />
             ))}
-            <button onClick={handleLoadMore}>load more</button>
+            <div className={style.centerButtonContainer}>
+                <button className={style.loadMoreButton} onClick={handleLoadMore}>
+                    Load More
+                </button>
+            </div>
         </div>
     );
 };

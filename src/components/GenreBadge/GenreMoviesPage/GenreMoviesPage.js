@@ -1,17 +1,22 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import {apiService} from "../../../services";
-import {urls} from "../../../constants";
+import { useParams, Link, useLocation } from 'react-router-dom';
+import { apiService } from "../../../services";
+import { urls } from "../../../constants";
 
 const GenreMoviesPage = () => {
     const { genreId } = useParams();
     const [movies, setMovies] = useState([]);
+    const location = useLocation();
+    const genreName = location.state?.genreName || '';
+
+    // Отладочный вывод для проверки значения genreName
+    console.log('GenreMoviesPage genreName:', genreName);
+
 
     useEffect(() => {
         const fetchMovies = async () => {
             try {
-                const response = await apiService.get(urls.list, { // Проверьте, что здесь используется apiService из файла apiService.js
+                const response = await apiService.get(urls.list, {
                     params: {
                         with_genres: genreId,
                     },
@@ -27,14 +32,15 @@ const GenreMoviesPage = () => {
 
     return (
         <div>
-            <h1>Genre Movies Page</h1>
-            {movies.map((movie) => (
-                <div key={movie.id}>
-                    {/* Создаем ссылку с путем `/details/:movieId`, где :movieId - это идентификатор фильма */}
-                    <Link to={`/details/${movie.id}`}>{movie.title}</Link>
-                    <p>{movie.overview}</p>
-                </div>
-            ))}
+            <div>
+                <h1>{genreName}</h1>
+                {movies.map((movie) => (
+                    <div key={movie.id}>
+                        <Link to={`/details/${movie.id}`}>{movie.title}</Link>
+                        <p>{movie.overview}</p>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 };
