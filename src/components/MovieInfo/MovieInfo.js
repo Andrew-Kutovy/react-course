@@ -39,6 +39,8 @@ const MovieInfo = () => {
                         {genre.name} /
                     </Link>
                 ))}
+                <h3>{movieDetails.tagline}</h3>
+                <h3>release date: {movieDetails.release_date}</h3>
             </div>
             <p>{movieDetails.overview}</p>
             <img

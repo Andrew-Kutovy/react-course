@@ -7,11 +7,11 @@ const GenreMoviesPage = () => {
     const { genreId } = useParams();
     const [movies, setMovies] = useState([]);
     const location = useLocation();
-    const genreName = location.state?.genreName || '';
+    const searchParams = new URLSearchParams(location.search);
+    const genreName = searchParams.get('name') || '';
 
     // Отладочный вывод для проверки значения genreName
     console.log('GenreMoviesPage genreName:', genreName);
-
 
     useEffect(() => {
         const fetchMovies = async () => {
@@ -38,6 +38,7 @@ const GenreMoviesPage = () => {
                     <div key={movie.id}>
                         <Link to={`/details/${movie.id}`}>{movie.title}</Link>
                         <p>{movie.overview}</p>
+                        <img src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} alt="poster" />
                     </div>
                 ))}
             </div>
