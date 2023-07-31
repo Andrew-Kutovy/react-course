@@ -1,15 +1,15 @@
 .container {
-    background-image: url("https://image.tmdb.org/t/p/original${movieDetails.backdrop_path}");
-    background-size: cover;
-    background-position: center;
-    min-height: 100vh;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    padding: 20px;
 }
-
-h1, p {
-    color: #ffffff;
-    text-align: center;
+.poster{
+    margin-right: 20px;
+}
+.genres{
+    background-color: #363649;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+    color: #e5dee1;
+    text-decoration: none;
 }
