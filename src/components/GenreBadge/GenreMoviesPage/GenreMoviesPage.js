@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, useLocation } from 'react-router-dom';
+
 import { apiService } from "../../../services";
 import { urls } from "../../../constants";
 
@@ -9,9 +10,6 @@ const GenreMoviesPage = () => {
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
     const genreName = searchParams.get('name') || '';
-
-    // Отладочный вывод для проверки значения genreName
-    console.log('GenreMoviesPage genreName:', genreName);
 
     useEffect(() => {
         const fetchMovies = async () => {
@@ -26,7 +24,6 @@ const GenreMoviesPage = () => {
                 console.error('Failed to fetch movies', error);
             }
         };
-
         fetchMovies();
     }, [genreId]);
 

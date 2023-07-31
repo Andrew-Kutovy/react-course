@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+
 import MoviesListCard from "../MoviesListCard/MoviesListCard";
 import style from './MoviesList.module.css';
 import listService from "../../services/listService";
@@ -30,9 +31,7 @@ const MoviesList = () => {
 
     if (loading) {
         return <div>Loading...</div>;
-    }
-
-    if (error) {
+    }else if (error) {
         return <div>{error}</div>;
     }
 
@@ -42,9 +41,7 @@ const MoviesList = () => {
                 <MoviesListCard key={item.id} film={item} />
             ))}
             <div className={style.centerButtonContainer}>
-                <button className={style.loadMoreButton} onClick={handleLoadMore}>
-                    Load More
-                </button>
+                <button className={style.loadMoreButton} onClick={handleLoadMore}>Load More</button>
             </div>
         </div>
     );
