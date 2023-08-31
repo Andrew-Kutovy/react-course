@@ -1,11 +1,14 @@
 import ReactDOM from 'react-dom/client';
+import {RouterProvider} from "react-router-dom";
 
-import ProductsLayout from "./layouts/ProductsLayout/ProductsLayout";
+import {routes} from "./router";
+
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <ProductsLayout/>
+    <RouterProvider router={routes}/>
 );
 
 
