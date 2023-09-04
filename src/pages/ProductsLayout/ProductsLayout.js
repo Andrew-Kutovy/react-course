@@ -1,11 +1,11 @@
 import React from 'react';
 
-import Products from "../../components/Products/Products";
+import Prods from "../../components/Prods/Prods";
 
 const ProductsLayout = () => {
     return (
         <div>
-            <Products/>
+            <Prods />
         </div>
     );
 };

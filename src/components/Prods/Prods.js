@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {getProd} from "../../services/product.services";
+import {getProd, getProdById} from "../../services/product.services";
 import ProdShort from "./prodShort";
 import ProdPhotos from "./prodPhotos";
 
@@ -11,13 +11,13 @@ const Prods = () => {
         getProd().then(({products})=>setProducts([...products]))
     }, []);
 
+    const chosenProd = (id) => getProdById(id).then(photos=> setPhotos(photos))
 
     return (
         <div>
             {photos && <ProdPhotos photos={photos} setPhotos={setPhotos}/>}
             Prods:
-            {products.map(prod => <ProdShort key={prod.id} prod={prod} setPhotos={setPhotos}/>)}
-            {/*{photos.map(photo => <ProdPhotos key={photo.id} />)}*/}
+            {products.map(prod => <ProdShort key={prod.id} prod={prod} chosenProd={chosenProd}/>)}
         </div>
     );
 };
